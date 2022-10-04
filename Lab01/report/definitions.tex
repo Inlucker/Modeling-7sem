@@ -1,0 +1,63 @@
+\chapter{Определения}
+% \section*{Определение $\gamma$-доверительного интервала}
+
+%\section*{Равномерное распределение}
+\textbf{Определение}. Говорят, что случайная величина $X$ имеет равномерное распределение на отрезке $[a; b]$, если ее функция плотности имеет вид
+
+\begin{equation*}
+	f_{X}(x) =
+	\begin{cases}
+		c, & x \in [a;b]\\
+		0, & \text{иначе}
+	\end{cases}
+\end{equation*}
+
+Значение константы $c$ однозначно определяется из условия нормировки.
+
+\begin{equation*}
+	1 = \int\limits_{-\infty}^{+\infty}f(x)dx =
+	\int\limits_{a}^{b}cdx =
+	c(b - a) = 1
+	\Longrightarrow
+	c = \frac{1}{b - a}	
+\end{equation*}
+
+Обозначается $X \sim R(a, b)$.
+
+Функция распределения равномерной случайной величины X:
+
+\begin{equation*}
+	F_X(x) = 
+	\begin{cases}
+		0, & x < a\\
+		\frac{x-a}{b-a}, & x \in [a;b]\\
+		1, & x > b
+	\end{cases}
+\end{equation*}
+
+\newpage
+%\section*{Гамма-распределение}
+\textbf{Определение} Гамма-функцией Эйлера называется отбражение
+
+\begin{equation*}
+	\Gamma: \mathds{R}^{+} \longrightarrow \mathds{R},
+\end{equation*}
+
+определенное правилом
+
+\begin{equation*}
+	\Gamma(x) =
+	\int\limits_0^{+\infty} e^{-t} \cdot t^{x-1} dt
+\end{equation*}
+
+\textbf{Определение} Говорят что случайная величина $\xi$ имеет гамма-распределение с параметрами $\lambda$ и $\alpha$, если ее функция плотности распределения вероятностей имеет вид
+
+\begin{equation*}
+	f_{\xi}(x) =
+	\begin{cases}
+		\frac{\lambda^{\alpha}}{\Gamma(\alpha)}x^{\alpha-1}e^{-\lambda x}, & x > 0\\
+		0, & \text{иначе}
+	\end{cases}
+\end{equation*}
+
+Обозначается $\xi \sim \Gamma(\lambda, \alpha)$.
