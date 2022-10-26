@@ -1,0 +1,174 @@
+% LaTeX settings for MATLAB code listings
+% based on Ted Pavlic's settings in http://links.tedpavlic.com/ascii/homework_new_tex.ascii
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+
+% This is the color used for MATLAB comments below
+\definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
+
+% For faster processing, load Matlab syntax for listings
+\lstloadlanguages{Matlab}%
+\lstset{language=Matlab,                        % Use MATLAB
+	frame=single,                           % Single frame around code
+	basicstyle=\small\ttfamily,             % Use small true type font
+	keywordstyle=[1]\color{Blue}\bfseries,        % MATLAB functions bold and blue
+	keywordstyle=[2]\color{Purple},         % MATLAB function arguments purple
+	keywordstyle=[3]\color{Blue}\underbar,  % User functions underlined and blue
+	identifierstyle=,                       % Nothing special about identifiers
+	% Comments small dark green courier
+	commentstyle=\usefont{T1}{pcr}{m}{sl}\color{MyDarkGreen}\small,
+	stringstyle=\color{Purple},             % Strings are purple
+	showstringspaces=false,                 % Don't put marks in string spaces
+	tabsize=5,                              % 5 spaces per tab
+	%
+	%%% Put standard MATLAB functions not included in the default
+	%%% language here
+	morekeywords={xlim,ylim,var,alpha,factorial,poissrnd,normpdf,normcdf},
+	%
+	%%% Put MATLAB function parameters here
+	morekeywords=[2]{on, off, interp},
+	%
+	%%% Put user defined functions here
+	morekeywords=[3]{FindESS, homework_example},
+	%
+	morecomment=[l][\color{Blue}]{...},     % Line continuation (...) like blue comment
+	numbers=left,                           % Line numbers on left
+	firstnumber=1,                          % Line numbers start with line 1
+	numberstyle=\tiny\color{Blue},          % Line numbers are blue
+	stepnumber=1,                           % Line numbers go in steps of 5
+	breaklines=true,
+	extendedchars=\true,
+	keepspaces=true
+}
+
+% Includes a MATLAB script.
+% The first parameter is the label, which also is the name of the script
+%   without the .m.
+% The second parameter is the optional caption.
+\newcommand{\matlabscript}[2]
+{\lstinputlisting[caption=#2,label=#1]{#1.m}}
+
+% for C++
+%\usepackage{xcolor}
+%%
+%\definecolor{listing}{gray}{0.9}
+%\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+%%\lstset{
+%%%	backgroundcolor=\color{lbcolor},
+%%	tabsize=4,    
+%%	%   rulecolor=,
+%%	language=[GNU]C++,
+%%	basicstyle=\scriptsize,
+%%	upquote=true,
+%%	aboveskip={1.5\baselineskip},
+%%	columns=fixed,
+%%	showstringspaces=false,
+%%	extendedchars=false,
+%%	breaklines=true,
+%%	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+%%	frame=single,
+%%	numbers=left,
+%%	showtabs=false,
+%%	showspaces=false,
+%%	showstringspaces=false,
+%%	identifierstyle=\ttfamily,
+%%	keywordstyle=\color[rgb]{0,0,1},
+%%	commentstyle=\color[rgb]{0.026,0.112,0.095},
+%%	stringstyle=\color[rgb]{0.627,0.126,0.941},
+%%	numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+%%	%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+%%}
+%\lstset{
+%%	backgroundcolor=\color{lbcolor},
+%	tabsize=4,
+%	language=C++,
+%%	captionpos=b,
+%	tabsize=3,
+%%	frame=lines,
+%	numbers=left,
+%%	numberstyle=\tiny,
+%%	numbersep=5pt,
+%%	breaklines=true,
+%	showstringspaces=false,
+%	basicstyle=\footnotesize,
+%	%  identifierstyle=\color{magenta},
+%	keywordstyle=\color[rgb]{0,0,1},
+%	commentstyle=\color{ForestGreen},
+%	stringstyle=\color{red}
+%}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage[left=30mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+
+\usepackage{microtype}
+\sloppy
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{indentfirst}
+\setlength{\parindent}{12.5mm}
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{20pt}{\LARGE\bfseries}
+\titlespacing*{\chapter}{\parindent}{*2}{*2}
+\titleformat{\section}{\Large\bfseries}{\thesection}{20pt}{\Large\bfseries}
+
+\addto{\captionsrussian}{\renewcommand*{\contentsname}{Содержание}}
+\usepackage{natbib}
+\renewcommand{\bibsection}{\chapter*{Список использованных источников}}
+
+\usepackage{caption}
+
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage{graphicx}
+\newcommand{\imgwc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[width=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+\newcommand{\imghc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[height=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+\newcommand{\imgsc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[scale=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[unicode]{hyperref}
+\hypersetup{hidelinks}
+
+\makeatletter
+\newcommand{\vhrulefill}[1]
+{
+	\leavevmode\leaders\hrule\@height#1\hfill \kern\z@
+}
+\makeatother
+
+%added
+\usepackage{ dsfont }
