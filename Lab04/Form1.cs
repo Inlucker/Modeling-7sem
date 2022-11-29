@@ -31,10 +31,10 @@ namespace Lab04
 
 			double l;
 			int al;
-			txt = aInp.Text.Replace(".", ",");
+			txt = sigInp.Text.Replace(".", ",");
 			l = Convert.ToDouble(txt);
 
-			txt = bInp.Text.Replace(".", ",");
+			txt = muInp.Text.Replace(".", ",");
 			al = Convert.ToInt32(Convert.ToDouble(txt));
 
 			double fb;
@@ -67,10 +67,10 @@ namespace Lab04
 
 			double l;
 			int al;
-			txt = aInp.Text.Replace(".", ",");
+			txt = sigInp.Text.Replace(".", ",");
 			l = Convert.ToDouble(txt);
 
-			txt = bInp.Text.Replace(".", ",");
+			txt = muInp.Text.Replace(".", ",");
 			al = Convert.ToInt32(Convert.ToDouble(txt));
 
 			double fb;

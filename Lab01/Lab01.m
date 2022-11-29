@@ -6,12 +6,12 @@ clc
 a = 0;
 b = 0;
 while a >= b
-    prompt = "Введите a: ";
-    a = input(prompt);
-    prompt = "Введите b: ";
-    b = input(prompt);
-%     a = -10;
-%     b = 5;
+%     prompt = "Введите a: ";
+%     a = input(prompt);
+%     prompt = "Введите b: ";
+%     b = input(prompt);
+    a = -10;
+    b = 5;
 end
 
 %Функция распределения
@@ -46,12 +46,12 @@ hold off;
 alpha = 0;
 lambda = 0;
 while lambda <= 0 && alpha <= 0
-    prompt = "Введите \alpha: ";
-    alpha = input(prompt);
-    prompt = "Введите \lambda: ";
-    lambda = input(prompt);
-%     alpha = 3;
-%     lambda = 5;
+%     prompt = "Введите \alpha: ";
+%     alpha = input(prompt);
+%     prompt = "Введите \lambda: ";
+%     lambda = input(prompt);
+    alpha = 3;
+    lambda = 5;
 end
 
 %Функция распределения

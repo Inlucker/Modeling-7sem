@@ -190,7 +190,7 @@ namespace Lab04
 			this.bInp.Name = "bInp";
 			this.bInp.Size = new System.Drawing.Size(116, 29);
 			this.bInp.TabIndex = 20;
-			this.bInp.Text = "1.4";
+			this.bInp.Text = "0.5";
 			// 
 			// label2
 			// 
@@ -220,7 +220,7 @@ namespace Lab04
 			this.aInp.Name = "aInp";
 			this.aInp.Size = new System.Drawing.Size(116, 29);
 			this.aInp.TabIndex = 17;
-			this.aInp.Text = "0.9";
+			this.aInp.Text = "0.0";
 			// 
 			// Form1
 			// 
