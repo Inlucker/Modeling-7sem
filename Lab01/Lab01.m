@@ -10,8 +10,8 @@ while a >= b
 %     a = input(prompt);
 %     prompt = "Введите b: ";
 %     b = input(prompt);
-    a = -10;
-    b = 5;
+    a = 0;
+    b = 0.5;
 end
 
 %Функция распределения
@@ -21,7 +21,7 @@ tmp = (b-a)/2.0;
 x = a-tmp:.01:b+tmp;
 pdf = pdf(pd,x);
 
-figure('Name','Функция равномерного распределения', ...
+figure('Name','Функция плотности равномерного распределения', ...
     'NumberTitle', 'off', ...
     'Position', [180 555 560 420]);
 hold on;
@@ -33,7 +33,7 @@ hold off;
 %Функция плотности
 cdf = cdf(pd,x);
 
-figure('Name','Функция плотности равномерного распределения', ...
+figure('Name','Функция равномерного распределения', ...
     'NumberTitle', 'off', ...
     'Position', [740 555 560 420]);
 hold on;
@@ -51,14 +51,14 @@ while lambda <= 0 && alpha <= 0
 %     prompt = "Введите \lambda: ";
 %     lambda = input(prompt);
     alpha = 3;
-    lambda = 5;
+    lambda = 1/5;
 end
 
 %Функция распределения
-gamma_x = 0:0.1:50;
-gammapdf_y = gampdf(gamma_x, lambda, alpha);
+gamma_x = 0:0.01:5;
+gammapdf_y = gampdf(gamma_x, alpha, lambda);
 
-figure('Name','Функция гамма распределения', ...
+figure('Name','Функция плотности гамма распределения', ...
     'NumberTitle', 'off', ...
     'Position', [180 50 560 420]);
 hold on;
@@ -68,9 +68,9 @@ legend('Распределение', 'Location', 'northeast');
 hold off;
 
 %Функция плотности
-gammacdf_y = gamcdf(gamma_x, lambda, alpha);
+gammacdf_y = gamcdf(gamma_x, alpha, lambda);
 
-figure('Name','Функция плотности гамма распределения', ...
+figure('Name','Функция гамма распределения', ...
     'NumberTitle', 'off', ...
     'Position', [740 50 560 420]);
 hold on;
