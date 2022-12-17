@@ -10,6 +10,7 @@ namespace Lab04
 	{
         public bool push(Request r)
         {
+            que_entry++;
             Enqueue(r);
             if (Count > max_size)
             {
@@ -24,5 +25,6 @@ namespace Lab04
         }
 
         public int max_size = 0;
+        public int que_entry = 0;
     }
 }

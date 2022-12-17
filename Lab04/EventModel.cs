@@ -53,7 +53,6 @@ namespace Lab04
 			if (generator.isReady(curT))
 			{
 				Request new_r = generator.genRequest();
-				que_entry++;
 				if (req_que.push(new_r))
 				{
 					no_overflow_time = 0;
@@ -77,7 +76,7 @@ namespace Lab04
 
 				if (rnd.NextDouble() < feedback)
 				{
-					Request old_r = new Request(curT);
+					Request old_r = new Request(service.free_time);
 					req_que.push(old_r);
 				}
 			}
@@ -94,7 +93,7 @@ namespace Lab04
 			Console.WriteLine("REQQUE:");
 			Console.WriteLine("MAX = " + req_que.max_size);
 			Console.WriteLine("CONT. = " + cur_que_size);
-			Console.WriteLine("ENTRY = " + que_entry);
+			Console.WriteLine("ENTRY = " + req_que.que_entry);
 			Console.WriteLine("ENTRY(0) = " + que_entry_zero);
 			//Console.WriteLine("AVE CONT. = " + avg_que_size);
 			Console.WriteLine("AVE TIME. = " + avg_que_time);
@@ -117,7 +116,6 @@ namespace Lab04
 		public double avg_serve_time = 0;
 		public double avg_gen_time = 0;
 		public double service_util = 0;
-		public int que_entry = 0;
 		public int que_entry_zero = 0;
 
 		private Random rnd = new Random();
