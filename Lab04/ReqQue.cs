@@ -24,5 +24,5 @@ namespace Lab04
         }
 
         public int max_size = 0;
-	}
+    }
 }

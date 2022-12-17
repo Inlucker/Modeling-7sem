@@ -23,6 +23,7 @@ namespace Lab04
 		{
 			Request new_r = new Request(gen_time);
 			updateGenTime();
+			generated_n++;
 			return new_r;
 		}
 
@@ -33,18 +34,19 @@ namespace Lab04
 
 			if (min_time == -1)
 				min_time = res;
-			else if (gen_time < min_time)
+			else if (res < min_time)
 				min_time = res;
 
 			if (max_time == -1)
 				max_time = res;
-			else if (gen_time > max_time)
+			else if (res > max_time)
 				max_time = res;
 		}
 
 		public double a;
 		public double b;
 		public double gen_time = 0;
+		public int generated_n = 0;
 
 		private Random rnd = new Random();
 		private double min_time = -1;

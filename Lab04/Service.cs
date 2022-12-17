@@ -22,6 +22,7 @@ namespace Lab04
 		public void serve(Request r, double t)
 		{
 			updateFreeTime(t);
+			served_n++;
 			r.serve_time = free_time;
 		}
 
@@ -30,7 +31,8 @@ namespace Lab04
 			double res = 0;
 			for (int i = 0; i < alpha; i++)
 				res -= Math.Log(1 - rnd.NextDouble());
-			res /= alpha * lambda;
+			res *= lambda;
+			//res *= lambda / alpha;
 
 			if (min_res == -1)
 				min_res = res;
@@ -43,11 +45,14 @@ namespace Lab04
 				max_res = res;
 
 			free_time = t + res;
+			working_time += res;
 		}
 
 		public double lambda;
 		public int alpha;
 		public double free_time = 0;
+		public int served_n = 0;
+		public double working_time = 0;
 
 		private Random rnd = new Random();
 		private double min_res = -1;
