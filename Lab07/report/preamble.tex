@@ -1,0 +1,93 @@
+\usepackage{listings}
+\lstset{
+	language = [Sharp]C,
+	extendedchars=\true,
+	keepspaces=true,
+	basicstyle=\small\sffamily,
+	showstringspaces=\false,
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	frame=single,
+	tabsize=2,
+	captionpos=t,
+	breaklines=true,
+	breakatwhitespace=false,
+	escapeinside={\#*}{*)}
+}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage[left=30mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+
+\usepackage{microtype}
+\sloppy
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{indentfirst}
+\setlength{\parindent}{12.5mm}
+
+\usepackage{titlesec}
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{20pt}{\LARGE\bfseries}
+\titlespacing*{\chapter}{\parindent}{*2}{*2}
+\titleformat{\section}{\Large\bfseries}{\thesection}{20pt}{\Large\bfseries}
+
+\addto{\captionsrussian}{\renewcommand*{\contentsname}{Содержание}}
+\usepackage{natbib}
+\renewcommand{\bibsection}{\chapter*{Список использованных источников}}
+
+\usepackage{caption}
+
+\usepackage{wrapfig}
+\usepackage{float}
+
+\usepackage{graphicx}
+\newcommand{\imgwc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[width=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+\newcommand{\imghc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[height=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+\newcommand{\imgsc}[4]
+{
+	\begin{figure}[#1]
+		\center{\includegraphics[scale=#2]{inc/img/#3}}
+		\caption{#4}
+		\label{img:#3}
+	\end{figure}
+}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage[unicode]{hyperref}
+\hypersetup{hidelinks}
+
+\makeatletter
+\newcommand{\vhrulefill}[1]
+{
+	\leavevmode\leaders\hrule\@height#1\hfill \kern\z@
+}
+\makeatother
+
+%added
+\usepackage{ dsfont }
